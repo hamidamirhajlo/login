@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.userauthentication.ui.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/login_responsive">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_loginFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.userauthentication.ui.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.example.userauthentication.ui.ChangePasswordFragment"
+        android:label="Change password"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.example.userauthentication.ui.ResetPasswordFragment"
+        android:label="Reset password"
+        tools:layout="@layout/fragment_reset_password">
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_codeValidationFragment"
+            app:destination="@id/codeValidationFragment"
+
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_in"
+            app:popEnterAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/codeValidationFragment"
+        android:name="com.example.userauthentication.ui.CodeValidationFragment"
+        android:label="Code validation"
+        tools:layout="@layout/fragment_code_validation">
+        <action
+            android:id="@+id/action_codeValidationFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popUpTo="@id/resetPasswordFragment" />
+    </fragment>
+</navigation>
