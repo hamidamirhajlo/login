@@ -1,3 +1,3 @@
 # login
 
-a papular login mudol for all apps!
+a papular login module for all andriod apps!
